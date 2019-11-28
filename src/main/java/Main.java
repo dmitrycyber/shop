@@ -5,6 +5,7 @@ public class Main {
     public static void main(String[] args) {
 
         System.out.println("-----------TASK1------------");
+
         Shop shop1 = new Sosedi();
         Item mouse1 = new Mouse(1, "A4Tech", 10);
         Item mouse2 = new Mouse(2, "Logitech", 20);
