@@ -1,10 +1,46 @@
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws SQLException, ClassNotFoundException {
+        WorkWithDB db = new WorkWithDB();
+        //db.createTableOfProducts();
+        //db.deleteTableOfProducts();
+        //db.addProductsToTable();
+        Green shop = new Green();
+        db.putItemsFromDbToShop(shop);
+        System.out.println(shop.getMapOfItems());
 
-        System.out.println("-----------TASK1------------");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        /*System.out.println("-----------TASK1------------");
 
         Shop shop1 = new Sosedi();
         Item mouse1 = new Mouse(1, "A4Tech", 10);
@@ -19,11 +55,11 @@ public class Main {
         shop1.putInShop(mouse4);
 
         List<Integer> listOfIdsPurchasedItems1 = new ArrayList<>();
-        /*listOfIdsPurchasedItems1.add(1);
+        listOfIdsPurchasedItems1.add(1);
         listOfIdsPurchasedItems1.add(2);
         listOfIdsPurchasedItems1.add(3);
         listOfIdsPurchasedItems1.add(4);
-        listOfIdsPurchasedItems1.add(4);*/
+        listOfIdsPurchasedItems1.add(4);
         try {
             Check check1 = shop1.getCheck(listOfIdsPurchasedItems1);
             System.out.println(check1);
@@ -47,10 +83,10 @@ public class Main {
         shop2.putInShop(keyboard4);
 
         List<Integer> listOfIdsPurchasedItems2 = new ArrayList<>();
-        /*listOfIdsPurchasedItems2.add(1);
         listOfIdsPurchasedItems2.add(1);
         listOfIdsPurchasedItems2.add(1);
-        listOfIdsPurchasedItems2.add(2);*/
+        listOfIdsPurchasedItems2.add(1);
+        listOfIdsPurchasedItems2.add(2);
         try {
             Check check2 = shop2.getCheck(listOfIdsPurchasedItems2);
             System.out.println(check2);
@@ -58,7 +94,7 @@ public class Main {
         catch (NoBuyingItemsException e){
             System.out.println(e.getMessage());
 
-        }
+        }*/
 
 
 

@@ -6,6 +6,10 @@ public class Green implements Shop {
     private Map<Item, Integer> mapOfItems = new HashMap<>();
     private Map<Integer, Item> idsOfItems = new HashMap<>();
 
+    public Map<Item, Integer> getMapOfItems() {
+        return new HashMap<>(mapOfItems);
+    }
+
     public void putInShop(Item item) {
         if (item == null) {
             return;
