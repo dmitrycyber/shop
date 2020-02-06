@@ -7,13 +7,8 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) throws SQLException, ClassNotFoundException {
-        WorkWithDB db = new WorkWithDB();
-        //db.createTableOfProducts();
-        //db.deleteTableOfProducts();
-        //db.addProductsToTable();
-        Green shop = new Green();
-        db.putItemsFromDbToShop(shop);
-        System.out.println(shop.getMapOfItems());
+//        Shop green = new Green();
+//        green.putInShop();
     }
 
 }

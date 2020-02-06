@@ -1,7 +1,4 @@
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -50,5 +47,35 @@ public class SosediTest {
         sosedi.getCheck(listIdsOfBuyingItems);
     }
 
+    @Test
+    public void testСountOfAddedItems(){
+        sosedi.putInShop(item1);
+        sosedi.putInShop(item2);
+        sosedi.putInShop(item3);
+        sosedi.putInShop(item4);
+        Assert.assertEquals(4, sosedi.getListOfAddedItems().size());
+    }
 
+    @Test
+    public void testDublicateItems(){
+        sosedi.putInShop(item1);
+        sosedi.putInShop(item2);
+        sosedi.putInShop(item2);
+        sosedi.putInShop(item3);
+        sosedi.putInShop(item4);
+        Assert.assertEquals(5, sosedi.getListOfAddedItems().size());
+    }
+
+    @Test
+    public void testPriceOfItemsInShop(){
+        sosedi.putInShop(item1);
+        sosedi.putInShop(item2);
+        sosedi.putInShop(item3);
+        Assert.assertEquals(300, sosedi.priceOfAddedItems());
+    }
+
+    @Test
+    public void testPriceNoItemsInShop(){
+        Assert.assertEquals(0, sosedi.priceOfAddedItems());
+    }
 }

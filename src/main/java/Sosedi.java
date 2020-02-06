@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 
 public class Sosedi implements Shop {
@@ -36,6 +37,14 @@ public class Sosedi implements Shop {
     public List<Item> getListOfAddedItems(){
         List<Item> copyOfListOfAddedItems = new ArrayList<>(listOfItems);
         return copyOfListOfAddedItems;
+    }
+
+    public int priceOfAddedItems(){
+        Optional<Integer> optional = listOfItems
+                .stream()
+                .map(Item::getPrice)
+                .reduce(Integer::sum);
+        return optional.orElse(0);
     }
 }
 

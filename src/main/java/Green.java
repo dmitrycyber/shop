@@ -34,14 +34,16 @@ public class Green implements Shop {
         for (int i = 0; i < listIds.size(); i++) {
             Item buyingItem = idsOfItems.get(listIds.get(i));
             countOfItemsInShop = mapOfItems.get(buyingItem);
-            check.addItemsToCheck(buyingItem);
+
             if (countOfItemsInShop == null) {
             }
             else if (countOfItemsInShop > 1) {
                 mapOfItems.put(buyingItem, countOfItemsInShop - 1);
+                check.addItemsToCheck(buyingItem);
             }
             else {
                 mapOfItems.remove(buyingItem);
+                check.addItemsToCheck(buyingItem);
             }
         }
         return check;
